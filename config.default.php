@@ -21,11 +21,11 @@
 		define('DB_PASS',$dolibarr_main_db_pass);
 		define('DB_DRIVER',$dolibarr_main_db_type);
 	}
-
+/*
 	if(!dol_include_once('/abricot/inc.core.php')) {
 		print $langs->trans('AbricotNotFound'). ' : <a href="http://wiki.atm-consulting.fr/index.php/Accueil#Abricot" target="_blank">Abricot</a>';
 		exit;
 	}
-
+*/
 	
 

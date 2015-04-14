@@ -87,14 +87,16 @@ class modSpeedNav extends DolibarrModules
 		//							'dir' => array('output' => 'othermodulename'),      // To force the default directories names
 		//							'workflow' => array('WORKFLOW_MODULE1_YOURACTIONTYPE_MODULE2'=>array('enabled'=>'! empty($conf->module1->enabled) && ! empty($conf->module2->enabled)', 'picto'=>'yourpicto@speednav')) // Set here all workflow context managed by module
 		//                        );
-		$this->module_parts = array();
+		$this->module_parts = array(
+            'js' => array('/speednav/js/speednav.js.php'),  
+        );
 
 		// Data directories to create when module is enabled.
 		// Example: this->dirs = array("/speednav/temp");
 		$this->dirs = array();
 
 		// Config pages. Put here list of php page, stored into speednav/admin directory, to use to setup module.
-		$this->config_page_url = array("speednav_setup.php@speednav");
+		$this->config_page_url = array("speednav_about.php@speednav");
 
 		// Dependencies
 		$this->hidden = false;			// A condition to hide module
