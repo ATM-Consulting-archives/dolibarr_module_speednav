@@ -66,19 +66,22 @@ function initLink(onWhat) {
             
            $(this).click(function(event) {
                 var url = $(this).attr("ajax-url");
+                var title = $(this).text();
                 
                 if($("div#id-container-master").length==0) {
                     $("div#id-container").wrap( "<div id=\"id-container-master\" style=\"width:100%;\"></div>" );
                 }
                 
-             //   $( "div#id-container-master" ).css({ opacity:0.2 });
+             /*   $( "div#id-container-master" ).css({ opacity:0.2 });*/
                 $( "div#id-container-master" ).load( url+ " div#id-container", function( response, status, xhr ) {
                     
                     if(response=="") {
                         document.location.href = url;
                     }
                     else {
-                //       $( "div#id-container-master" ).css({ opacity:1 });
+                /*       $( "div#id-container-master" ).css({ opacity:1 }); */
+                       window.history.pushState({url: "" + url + ""}, title, url);
+                       document.title = title;
                        initLink("div#id-left div.vmenu a");
                     }
              
